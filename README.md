@@ -22,7 +22,11 @@ Les tutoriels s’appuient d’une part sur la simulation dans Gazebo du robot F
 
 Une erreur ? Une coquille ? Ouvrez une “issue” sur github, envoyez moi un MP sur [Robot-maker](http://www.robot-maker.com/) ou postez sur le [topic dédié](http://www.robot-maker.com/forum/topic/545874-thislinkneedstobeupdated).
 
- Validé avec 
--------------
- OS | Ubuntu 
- OS | Ubuntu 
+OS | Distribution ROS | Robot | Statut
+--------------------------------------
+Ubuntu 14.04 | indigo | Fetch | :heavy_check_mark:
+ |  | Froggy | :x:
+ | jade | Fetch | :x:
+ |  | Froggy | :x:
+Ubuntu 16.04 | kinetic | Fetch | :x:
+ | | Froggy | :x:
