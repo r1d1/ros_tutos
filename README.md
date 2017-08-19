@@ -25,8 +25,8 @@ Une erreur ? Une coquille ? Ouvrez une “issue” sur github, envoyez moi un MP
 OS | Distribution ROS | Robot | Statut
 ---|------------------|-------|-------
 Ubuntu 14.04 | indigo | Fetch | :heavy_check_mark:
- |  | Froggy | :x:
- | jade | Fetch | :x:
- |  | Froggy | :x:
+  |  | Froggy | :x:
+  | jade | Fetch | :x:
+  |  | Froggy | :x:
 Ubuntu 16.04 | kinetic | Fetch | :x:
- | | Froggy | :x:
+  |  | Froggy | :x:
