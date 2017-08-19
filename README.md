@@ -2,9 +2,9 @@
 
 Ce repository contient un ensemble de tutoriels pour l’initiation à ROS (en français). Les tutoriels sont organisés en épisodes couvrant les sujets suivants :
 
-[x] episode 1 : 
-[ ] episode 2 : 
-[ ] ...
+* [x] episode 1 : 
+* [ ] episode 2 : 
+* [ ] ...
 
 Il s'agit plus ou moins d'une adaptation en français des [http://wiki.ros.org/](tutos officiels) que je recommande si vous lisez l'anglais. La documentation a bien évolué et couvre la plupart des sujets essentiels. À noter qu'une version incomplète existe en français, mais pour le coup, il n'y a pas grand chose : [http://wiki.ros.org/fr](http://wiki.ros.org/fr).
 
@@ -23,7 +23,7 @@ Les tutoriels s’appuient d’une part sur la simulation dans Gazebo du robot F
 Une erreur ? Une coquille ? Ouvrez une “issue” sur github, envoyez moi un MP sur [Robot-maker](http://www.robot-maker.com/) ou postez sur le [topic dédié](http://www.robot-maker.com/forum/topic/545874-thislinkneedstobeupdated).
 
 OS | Distribution ROS | Robot | Statut
---------------------------------------
+---|------------------|-------|-------
 Ubuntu 14.04 | indigo | Fetch | :heavy_check_mark:
  |  | Froggy | :x:
  | jade | Fetch | :x:
