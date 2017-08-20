@@ -26,7 +26,7 @@ OS | Distribution ROS | Robot | Statut
 ---|------------------|-------|-------
 Ubuntu 14.04 | indigo | Fetch | :white_check_mark:
  . |  | Froggy | :x:
- _ | jade | Fetch | :x:
-  |  | Froggy | :x:
+ . | jade | Fetch | :x:
+ . |  | Froggy | :x:
 Ubuntu 16.04 | kinetic | Fetch | :x:
-  |  | Froggy | :x:
+ . |  | Froggy | :x:
