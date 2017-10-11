@@ -6,7 +6,7 @@ Ce repository contient un ensemble de tutoriels pour l’initiation à ROS (en f
 * [ ] episode 2 : 
 * [ ] ...
 
-Il s'agit plus ou moins d'une adaptation en français des [tutos officiels](http://wiki.ros.org/) que je recommande si vous lisez l'anglais. La documentation a bien évolué et couvre la plupart des sujets essentiels. À noter qu'une version incomplète existe en français, mais pour le coup, il n'y a pas grand chose : [http://wiki.ros.org/fr](http://wiki.ros.org/fr).
+Il s'agit plus ou moins d'une adaptation en français des [tutos officiels](http://wiki.ros.org/) que je recommande si vous lisez l'anglais. La documentation a bien évolué et couvre la plupart des sujets essentiels. À noter qu'une version incomplète existe en français, mais pour le coup, il n'y a pas grand chose : [http://wiki.ros.org/fr](http://wiki.ros.org/fr). Le texte des tutoriels est en "franglish": je ne traduis en général pas les termes techniques, mais une simple recherche devrait permettre de lever l'incertitude.
 
 ## Pré-requis
 

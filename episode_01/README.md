@@ -17,29 +17,39 @@ Les instructions de base sont disponibles [ici](http://wiki.ros.org/kinetic/Inst
 Si ça n'est pas déjà fait, modifiez les sources logicielles d'Ubuntu (les repositories à partir desquels vous installer des logiciels) pour autoriser les sources "restricted", "universe", "multiverse".
 On va ensuite ajouter le repository où sont disponibles les packages spécifiques à ROS. Dans un terminal, entrez la commande suivante :
 
-sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
+```
+    sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
+```
 
 Cette commande ajoute dans /etc/apt/sources.list.d la ligne contenant d'url du repository pour votre distribution d'Ubuntu (avec le résultat de lsb_release).
 
 
 Simulons un robot
+
 [Simulated turtlebot]
 
-Première chose, choisissons-nous un robot avec lequel jouer en simulation. Une liste est disponible sur [url=http://robots.ros.org/]http://robots.ros.org/[/url]. Pour ces tutoriels, nous allons utiliser Fetch de l'entreprise Fetch Robotics. La documentation est disponible [url=http://docs.fetchrobotics.com/gazebo.html]ici[/url]. Leur robot est une évolution du PR2 de Willowgarage, c'est un produit actuel donc le code et la documentation sont à jour, il est composé d'une plateforme mobile et d'un bras ce qui va nous permettre de jouer à la fois avec de la navigation mais aussi de la manipulation. Si vous voulez juste tester avec des robots plus simples, je conseille le turtlebot (le 2 est plutôt pas mal, le 3 est sorti récemment mais je ne l'ai pas testé) ou les robots de Clearpath Robotics (le husky par exemple, cependant, le package de simulation buggue à l'heure où j'écris ces lignes).
+Première chose, choisissons-nous un robot avec lequel jouer en simulation. Une liste est disponible sur [http://robots.ros.org/](http://robots.ros.org/). Pour ces tutoriels, nous allons utiliser Fetch de l'entreprise Fetch Robotics. La documentation est disponible [ici](url=http://docs.fetchrobotics.com/gazebo.html). Leur robot est une évolution du PR2 de Willowgarage, c'est un produit actuel donc le code et la documentation sont à jour, il est composé d'une plateforme mobile et d'un bras ce qui va nous permettre de jouer à la fois avec de la navigation mais aussi de la manipulation. Si vous voulez juste tester avec des robots plus simples, je conseille le turtlebot (le 2 est plutôt pas mal, le 3 est sorti récemment mais je ne l'ai pas testé) ou les robots de Clearpath Robotics (le husky par exemple, cependant, le package de simulation buggue à l'heure où j'écris ces lignes).
 
 Une fois les packages du robot installés, lançons une simulation de base.
+
 [video fetch]
+
 Gazebo est le simulateur, RViz permet de visualiser les capteurs du robot. Ici, on voit une démo de fetch & carry : prendre un objet pour l'apporter ailleurs. On notera d'ailleurs le fail du robot à la fin qui fait tomber le cube, mais qui s'en fiche. À peine créés, déjà feignantes ces machines !
 Plus sérieusement, la démo est probablement scriptée simplement. J'ai testé plusieurs autres fois et il arrive que le robot se trompe sur sa position dans l'environnement mais n'adapte pas sa navigation à la position des tables. Bref ... on fera mieux plus tard. :)
 
-Ici, l'environnement est simulé par Gazebo, mais notre robot est contrôlé à l'aide de ROS. Utilisons la commande rqt_graph dans un terminal.
+Ici, l'environnement est simulé par Gazebo, mais notre robot est contrôlé à l'aide de ROS. Utilisons la commande rqt_graph dans un terminal :
+
+```
+    rqt_graph
+```
 
 [output rqt_graph]
 
-On voit ici un ensemble de *nodes* (les ovales) connectés entre eux par des *topics* (les flèches qui passent à travers les rectangles). Sur l'image, mon curseur attire l'attention sur le node qui fait tourner le simulateur. Une des forces de ROS, c'est son système de communication : au travers des topics /head_camera/* je peux récupérer toutes les infos sur ma camera (l'image, mais également d'autres infos utiles) quelque soit le hardware ou le simulateur derrière. Ici, j'utilise Gazebo, mais je pourrais avoir un node qui fait l'interface avec V-Rep ou Marilou, tant que ce node fournit les mêmes topics, je n'ai pas besoin de changer mon architecture de contrôle. Et bien évidemment, quand je passe sur le robot réel, si les drivers me fournissent aussi ces topics, je n'ai rien à faire de plus. Magique, non ?
+On voit ici un ensemble de *nodes* (les ovales) connectés entre eux par des *topics* (les flèches qui passent à travers les rectangles). Sur l'image, mon curseur attire l'attention sur le node qui fait tourner le simulateur. Une des forces de ROS, c'est son système de communication : au travers des topics /head_camera/* je peux récupérer toutes les infos sur ma camera (l'image, mais également d'autres infos utiles) quelque soit le hardware ou le simulateur derrière. Ici, j'utilise Gazebo, mais je pourrais avoir un node qui fait l'interface avec V-Rep ou Anykode, tant que ce node fournit les mêmes topics, je n'ai pas besoin de changer mon architecture de contrôle. Et bien évidemment, quand je passe sur le robot réel, si les drivers me fournissent aussi ces topics, je n'ai rien à faire de plus. Magique, non ?
 
 Un peu de pratique
-Une fois ROS installé
+
+Avant de Une fois ROS installé
 
 erwan@sheepy:~$ roslaunch fetch_gazebo playground.launch 
 erwan@sheepy:~$ rosrun rviz rviz -d .rviz/ErwanFetch.rviz 
